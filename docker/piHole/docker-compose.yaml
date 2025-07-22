@@ -5,7 +5,6 @@ services:
     restart: unless-stopped
     environment:
       TZ: "Europe/Lisbon"           # Altere conforme seu fuso horário
-      WEBPASSWORD: "troque-esta-senha"   # Defina uma senha segura
     volumes:
       - ./etc-pihole:/etc/pihole
       - ./etc-dnsmasq.d:/etc/dnsmasq.d
@@ -13,8 +12,8 @@ services:
       - 127.0.0.1
       - 1.1.1.1                     # DNS externo alternativo (Cloudflare)
     ports:
-      - "53:53/tcp"                 # DNS
-      - "54:54/udp"
+      - "53:53/tcp"
+      - "53:53/udp"
       - "80:80/tcp"                 # Interface web
     cap_add:
       - NET_ADMIN                   # Necessário para controlar rede
