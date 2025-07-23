@@ -1,5 +1,5 @@
 appConfig:
-  theme: colorful
+  theme: lissy
   layout: auto
   iconSize: medium
   hideComponents:
@@ -7,33 +7,22 @@ appConfig:
     hideFooter: false
     hideSearch: false
     hideSettings: false
-
 pages:
-  - name: Home
-    path: /
-    sections:
-      - type: links
-        title: Favoritos
-        items:
-          - title: Google
-            url: https://google.com
-            icon: fab fa-google
-          - title: GitHub
-            url: https://github.com
-            icon: fab fa-github
-      - type: weather
-        title: Clima
-        options:
-          apiKey: ${WEATHER_API_KEY}
-          location: "Fafe,PT"
-
-  - name: Servidores
-    path: /
-    sections:
-      - type: links
-        title: Links Rápidos
-        items:
-          - title: Portainer
-            url: http://localhost:9000
-          - title: Traefik
-            url: http://localhost:8081
+  - name: Google
+    path: https://google.com
+pageInfo:
+  title: HomeLab
+  navLinks: []
+sections:
+  - name: Quick links
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Google
+        url: google.com
+        target: newtab
+        id: 0_1086_google
