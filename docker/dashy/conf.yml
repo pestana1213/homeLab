@@ -63,7 +63,7 @@ sections:
       - type: weather
         options:
           apiKey: ${WEATHER_API_KEY}
-          location: "Fafe,PT"
+          location: "Fafe"
       - type: rss-feed
         options:
           feedUrl: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
