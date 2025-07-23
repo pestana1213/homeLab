@@ -1,0 +1,27 @@
+# Node / Dashy
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Docker
+*.log
+docker-compose.override.yml
+.env
+
+# Dashy config backups
+/app/user-data/backup*
+/app/user-data/conf-backup.yml
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Logs locais
+*.log
+logs/
+
+docker/dashy/.env
