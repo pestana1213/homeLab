@@ -15,7 +15,8 @@ services:
 
     env_file:
       - .env
-
+    volumes:
+      - ./conf.yml:/app/user-data/conf.yml
     healthcheck:
       test: [ 'CMD', 'node', '/app/services/healthcheck' ]
       interval: 1m30s
