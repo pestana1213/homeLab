@@ -1,6 +1,6 @@
 echo "🟢 A iniciar os serviços..."
 
-SERVICES=("piHole")
+SERVICES=("piHole" "dashy")
 
 for SERVICE in "${SERVICES[@]}"; do
   echo "➡️ Subindo $SERVICE..."
