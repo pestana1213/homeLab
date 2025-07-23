@@ -52,7 +52,7 @@ sections:
         id: 0_004_youtube
         icon: fab fa-youtube
 
-  - name: Clima e Notícias
+  - name: Utilidade
     displayData:
       sortBy: default
       rows: 2
@@ -60,10 +60,13 @@ sections:
       collapsed: false
       hideForGuests: false
     widgets:
-      - type: weather
+      - type: weather-forecast
         options:
           apiKey: ${WEATHER_API_KEY}
           city: "Fafe"
+          numDays: 6
+      - type: clock
+      - type: joke
 
   - name: Status Geral
     displayData:
