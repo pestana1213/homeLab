@@ -4,7 +4,7 @@
 
 echo "🔴 Parando todos os serviços do homelab..."
 
-SERVICES=("piHole" "dashy")
+SERVICES=("piHole" "dashy" "nextCloud")
 
 for SERVICE in "${SERVICES[@]}"; do
   echo "⏹️ Parando $SERVICE..."
