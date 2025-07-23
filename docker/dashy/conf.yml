@@ -1,5 +1,5 @@
 appConfig:
-  theme: lissy
+  theme: colorful
   layout: auto
   iconSize: medium
   hideComponents:
@@ -7,22 +7,164 @@ appConfig:
     hideFooter: false
     hideSearch: false
     hideSettings: false
-pages:
-  - name: Google
-    path: https://google.com
+
 pageInfo:
   title: HomeLab
   navLinks: []
+
+pages:
+  - name: Home
+    path: /
+  - name: Servidores
+    path: /servers
+  - name: Produtividade
+    path: /prod
+  - name: Mídia
+    path: /media
+
 sections:
-  - name: Quick links
+  - name: Favoritos
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 4
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Google
+        url: https://google.com
+        target: newtab
+        id: 0_001_google
+        icon: fab fa-google
+      - title: GitHub
+        url: https://github.com
+        target: newtab
+        id: 0_002_github
+        icon: fab fa-github
+      - title: Gmail
+        url: https://mail.google.com
+        target: newtab
+        id: 0_003_gmail
+        icon: fas fa-envelope
+      - title: YouTube
+        url: https://youtube.com
+        target: newtab
+        id: 0_004_youtube
+        icon: fab fa-youtube
+
+  - name: Clima e Notícias
+    displayData:
+      sortBy: default
+      rows: 2
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: weather
+        options:
+          apiKey: ${WEATHER_API_KEY}
+          location: "Fafe,PT"
+      - type: rss-feed
+        options:
+          feedUrl: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+          maxItems: 5
+
+  - name: Status Geral
+    displayData:
+      sortBy: default
+      rows: 2
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: system-info
+        options:
+          hostname: true
+          uptime: true
+          disk: true
+          memory: true
+      - type: docker-containers
+        options:
+          socketPath: /var/run/docker.sock
+
+  - name: Links Rápidos
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 2
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Portainer
+        url: http://localhost:9000
+        target: newtab
+        id: 2_001_portainer
+        icon: fas fa-cogs
+      - title: Traefik
+        url: http://localhost:8081
+        target: newtab
+        id: 2_002_traefik
+        icon: fas fa-network-wired
+
+  - name: Notas Rápidas
     displayData:
       sortBy: default
       rows: 1
       cols: 1
       collapsed: false
       hideForGuests: false
+    widgets:
+      - type: note
+        options:
+          defaultText: "Anotações importantes..."
+
+  - name: Streaming
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 3
+      collapsed: false
+      hideForGuests: false
     items:
-      - title: Google
-        url: google.com
+      - title: Netflix
+        url: https://netflix.com
         target: newtab
-        id: 0_1086_google
+        id: 4_001_netflix
+      - title: Twitch
+        url: https://twitch.tv
+        target: newtab
+        id: 4_002_twitch
+      - title: Spotify
+        url: https://spotify.com
+        target: newtab
+        id: 4_003_spotify
+
+  - name: Tendências
+    displayData:
+      sortBy: default
+      rows: 2
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: youtube-trending
+      - type: reddit-feed
+        options:
+          subreddit: technology
+          limit: 5
+
+  - name: Criptomoedas
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: crypto-prices
+        options:
+          currency: USD
+          coins:
+            - bitcoin
+            - ethereum
+            - cardano
