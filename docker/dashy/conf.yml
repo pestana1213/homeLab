@@ -36,7 +36,7 @@ pages:
           - type: weather
             options:
               apiKey: ${WEATHER_API_KEY}
-              location: "Lisbon,PT"
+              location: "Fafe,PT"
           - type: rss-feed
             options:
               feedUrl: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
@@ -61,10 +61,8 @@ pages:
       - name: Links Rápidos
         items:
           - title: Portainer
-            icon: fas fa-cogs
             url: http://localhost:9000
           - title: Traefik
-            icon: fas fa-network-wired
             url: http://localhost:8081
 
   # ===== PÁGINA DE PRODUTIVIDADE =====
@@ -72,13 +70,6 @@ pages:
     path: /prod
     icon: fas fa-tasks
     sections:
-      - name: Calendário e Tarefas
-        widgets:
-          - type: google-calendar
-            options:
-              apiKey: SUA_API_KEY_GOOGLE
-              calendarId: SEU_CALENDARIO_ID
-          - type: todo-list
       - name: Notas Rápidas
         widgets:
           - type: note
@@ -93,27 +84,8 @@ pages:
       - name: Streaming
         items:
           - title: Netflix
-            icon: fas fa-film
             url: https://netflix.com
           - title: Twitch
-            icon: fab fa-twitch
             url: https://twitch.tv
           - title: Spotify
-            icon: fab fa-spotify
             url: https://spotify.com
-      - name: Tendências
-        widgets:
-          - type: youtube-trending
-          - type: reddit-feed
-            options:
-              subreddit: technology
-              limit: 5
-      - name: Criptomoedas
-        widgets:
-          - type: crypto-prices
-            options:
-              currency: USD
-              coins:
-                - bitcoin
-                - ethereum
-                - cardano
