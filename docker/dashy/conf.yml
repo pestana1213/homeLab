@@ -63,11 +63,7 @@ sections:
       - type: weather
         options:
           apiKey: ${WEATHER_API_KEY}
-          location: "Fafe"
-      - type: rss-feed
-        options:
-          feedUrl: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
-          maxItems: 5
+          city: "Fafe"
 
   - name: Status Geral
     displayData:
@@ -77,15 +73,9 @@ sections:
       collapsed: false
       hideForGuests: false
     widgets:
-      - type: system-info
+      - type: gl-cpu-history
         options:
-          hostname: true
-          uptime: true
-          disk: true
-          memory: true
-      - type: docker-containers
-        options:
-          socketPath: /var/run/docker.sock
+        hostname: http://192.1.168.195:61208
 
   - name: Links Rápidos
     displayData:
@@ -95,28 +85,11 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - title: Portainer
-        url: http://localhost:9000
+      - title: piHole
+        url: http://192.168.1.195/admin
         target: newtab
         id: 2_001_portainer
         icon: fas fa-cogs
-      - title: Traefik
-        url: http://localhost:8081
-        target: newtab
-        id: 2_002_traefik
-        icon: fas fa-network-wired
-
-  - name: Notas Rápidas
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    widgets:
-      - type: note
-        options:
-          defaultText: "Anotações importantes..."
 
   - name: Streaming
     displayData:
@@ -138,33 +111,3 @@ sections:
         url: https://spotify.com
         target: newtab
         id: 4_003_spotify
-
-  - name: Tendências
-    displayData:
-      sortBy: default
-      rows: 2
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    widgets:
-      - type: youtube-trending
-      - type: reddit-feed
-        options:
-          subreddit: technology
-          limit: 5
-
-  - name: Criptomoedas
-    displayData:
-      sortBy: default
-      rows: 1
-      cols: 1
-      collapsed: false
-      hideForGuests: false
-    widgets:
-      - type: crypto-prices
-        options:
-          currency: USD
-          coins:
-            - bitcoin
-            - ethereum
-            - cardano
