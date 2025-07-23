@@ -10,7 +10,8 @@ appConfig:
 
 pages:
   - name: Home
-    widgets:
+    path: /
+    sections:
       - type: links
         title: Favoritos
         items:
@@ -27,7 +28,8 @@ pages:
           location: "Fafe,PT"
 
   - name: Servidores
-    widgets:
+    path: /
+    sections:
       - type: links
         title: Links Rápidos
         items:
