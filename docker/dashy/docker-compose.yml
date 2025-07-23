@@ -23,3 +23,12 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+  glances:
+    image: nicolargo/glances:latest
+    container_name: glances
+    pid: "host"
+    ports:
+      - 61208:61208
+    command: glances -w
+    restart: unless-stopped

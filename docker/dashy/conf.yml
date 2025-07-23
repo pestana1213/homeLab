@@ -12,16 +12,6 @@ pageInfo:
   title: HomeLab
   navLinks: []
 
-pages:
-  - name: Home
-    path: /
-  - name: Servidores
-    path: /servers
-  - name: Produtividade
-    path: /prod
-  - name: Mídia
-    path: /media
-
 sections:
   - name: Favoritos
     displayData:
