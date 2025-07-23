@@ -12,9 +12,7 @@ services:
     # Set any environmental variables
     environment:
       - NODE_ENV=production
-
-    env_file:
-      - .env
+      - WEATHER_API_KEY=${WEATHER_API_KEY}
     volumes:
       - ./conf.yml:/app/user-data/conf.yml
     healthcheck:

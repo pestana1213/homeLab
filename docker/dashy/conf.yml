@@ -52,7 +52,7 @@ sections:
     widgets:
       - type: weather-forecast
         options:
-          apiKey: ${WEATHER_API_KEY}
+          apiKey: $WEATHER_API_KEY
           city: "Fafe"
           numDays: 6
       - type: clock
