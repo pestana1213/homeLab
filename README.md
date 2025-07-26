@@ -16,10 +16,28 @@ Objetivo: Aprender Docker, automação, auto-hospedagem e manter serviços pesso
 |----------------|------------------------------------|
 | Pi-hole        | Bloqueador de anúncios na rede     |
 | Nextcloud      | Nuvem pessoal                      |
-| Portainer      | Gerenciamento de containers        |
 | Dashy          | Painel com atalhos dos serviços    |
 
+## 🚀 Iniciar todos os containers? 
+
 ```bash
-cd docker/pihole
-docker-compose up -d
+chmod +x initialize.sh
+./initialize.sh
 ```
+
+## 🛑 Parar todos os containers? 
+
+```bash
+chmod +x stop.sh
+./stop.sh
+```
+
+## 🌐 URL do Dashy
+
+Acede ao painel Dashy no navegador através do endereço:
+
+```bash
+http://{host}:8080
+```
+
+Substitui {host} pelo IP ou nome do teu servidor.
