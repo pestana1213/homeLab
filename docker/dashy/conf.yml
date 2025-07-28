@@ -71,7 +71,7 @@ sections:
           hostname: http://192.168.1.195:61208
       - type: gl-disk-space
         options:
-          hostname: http://192.168.130.2:61208
+          hostname: http://192.168.1.195:61208
 
   - name: Links Rápidos
     displayData:
