@@ -86,6 +86,11 @@ sections:
         target: newtab
         id: 2_001_portainer
         icon: fas fa-cogs
+      - title: nextCloud
+        url: http://192.168.1.195:8070
+        target: newtab
+        id: 2_001_portainer
+        icon: fas fa-cogs
 
   - name: Streaming
     displayData:
