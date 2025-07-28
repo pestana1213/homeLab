@@ -25,3 +25,5 @@ Thumbs.db
 logs/
 
 docker/dashy/.env
+
+docker/myAi/ollama/
