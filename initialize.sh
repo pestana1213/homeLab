@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "🟢 A iniciar os serviços..."
 
-SERVICES=("piHole" "dashy" "nextCloud")
+SERVICES=("piHole" "dashy" "nextCloud" "myAi")
 
 for SERVICE in "${SERVICES[@]}"; do
   echo "➡️ Subindo $SERVICE..."
