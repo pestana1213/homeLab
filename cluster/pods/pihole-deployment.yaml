@@ -22,6 +22,8 @@ spec:
         env:
         - name: TZ
           value: Europe/Lisbon
+        - name: WEBPASSWORD
+          value: "admin"
         volumeMounts:
         - mountPath: /etc/pihole
           name: pihole-data
