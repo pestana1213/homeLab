@@ -22,14 +22,21 @@ spec:
             - name: TZ
               value: "Europe/Lisbon"
           ports:
-            - containerPort: 80
-              name: http
-            - containerPort: 53
-              name: dns-tcp
+            - port: 80
+              targetPort: 80
+              nodePort: 30081
               protocol: TCP
-            - containerPort: 53
-              name: dns-udp
+              name: http
+            - port: 53
+              targetPort: 53
+              nodePort: 30053
+              protocol: TCP
+              name: dns-tcp
+            - port: 53
+              targetPort: 53
+              nodePort: 30053
               protocol: UDP
+              name: dns-udp
           volumeMounts:
             - name: pihole-data
               mountPath: /etc/pihole
