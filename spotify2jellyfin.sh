@@ -27,7 +27,7 @@ spotdl "$SPOTIFY_URL" --output "$LOCAL_TMP_DIR"
 echo "Download complete. Finding Jellyfin pod..."
 
 # Get Jellyfin pod name
-JELLYFIN_POD=$(kubectl get pods -n "$JELLYFIN_NAMESPACE" -l "$JELLYFIN_LABEL" -o jsonpath="{.items[0].metadata.name}")
+JELLYFIN_POD=$(sudo kubectl get pods -n "$JELLYFIN_NAMESPACE" -l "$JELLYFIN_LABEL" -o jsonpath="{.items[0].metadata.name}")
 
 if [ -z "$JELLYFIN_POD" ]; then
   echo "Error: Jellyfin pod not found in namespace $JELLYFIN_NAMESPACE"
@@ -36,7 +36,7 @@ fi
 
 echo "Copying downloaded music to Jellyfin pod $JELLYFIN_POD:$JELLYFIN_MUSIC_PATH ..."
 
-kubectl cp "$LOCAL_TMP_DIR/." "$JELLYFIN_NAMESPACE/$JELLYFIN_POD:$JELLYFIN_MUSIC_PATH"
+sudo kubectl cp "$LOCAL_TMP_DIR/." "$JELLYFIN_NAMESPACE/$JELLYFIN_POD:$JELLYFIN_MUSIC_PATH"
 
 echo "Copy complete."
 
