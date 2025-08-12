@@ -21,7 +21,12 @@ spec:
         volumeMounts:
         - mountPath: /config
           name: jellyfin-config
+        - name: music-storage
+          mountPath: /music
       volumes:
       - name: jellyfin-config
         persistentVolumeClaim:
           claimName: jellyfin-config
+      - name: music-storage
+        persistentVolumeClaim:
+          claimName: jellyfin-music-pvc
