@@ -12,7 +12,7 @@ LOCAL_TMP_DIR="/tmp/spotdl-download"
 JELLYFIN_NAMESPACE="playground"
 JELLYFIN_LABEL="app=jellyfin"  # adjust if different
 JELLYFIN_MUSIC_PATH="/music"
-TIMEOUT_SECONDS=300  # 5 minutes timeout per track
+TIMEOUT_SECONDS=150  # 2 minutes timeout per track
 
 echo "Preparing to download Spotify URL: $SPOTIFY_URL"
 
