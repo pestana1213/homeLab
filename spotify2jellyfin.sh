@@ -20,7 +20,7 @@ rm -rf "$LOCAL_TMP_DIR"
 mkdir -p "$LOCAL_TMP_DIR"
 
 # Download music with spotdl
-spotdl --threads 2 "$SPOTIFY_URL" --output "$LOCAL_TMP_DIR"
+spotdl --threads 1 "$SPOTIFY_URL" --output "$LOCAL_TMP_DIR"
 
 echo "Download complete. Finding Jellyfin pod..."
 
