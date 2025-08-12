@@ -18,6 +18,9 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
+        volumeMounts:
+        - name: music-data
+          mountPath: /music
         ports:
         - containerPort: 80
 ---
