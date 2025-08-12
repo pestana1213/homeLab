@@ -9,3 +9,10 @@ spec:
   resources:
     requests:
       storage: 300Gi
+volumeMounts:
+- name: music-data
+  mountPath: /music
+volumes:
+- name: music-data
+  persistentVolumeClaim:
+    claimName: jellyfin-music-pvc
