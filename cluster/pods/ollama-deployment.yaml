@@ -21,7 +21,12 @@ spec:
           volumeMounts:
             - name: ollama-data
               mountPath: /root/.ollama
+            - name: ollama-models
+              mountPath: /root/.ollama
       volumes:
+        - name: ollama-models
+          persistentVolumeClaim:
+            claimName: ollama-pvc
         - name: ollama-data
           persistentVolumeClaim:
             claimName: ollama-pvc
