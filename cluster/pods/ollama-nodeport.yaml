@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ollama-nodeport
+spec:
+  selector:
+    app: ollama
+  type: NodePort
+  ports:
+    - port: 11434       # port the pod listens on
+      targetPort: 11434 # same as above
+      nodePort: 31434   # external port you’ll use
