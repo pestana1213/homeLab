@@ -18,3 +18,14 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
+          env:
+            - name: GMAIL_CREDENTIALS
+              value: "/app/client_secret.json"
+          volumeMounts:
+            - name: gmail-credentials
+              mountPath: /app/client_secret.json
+              subPath: client_secret.json
+      volumes:
+        - name: gmail-credentials
+          secret:
+            secretName: gmail-credentials
