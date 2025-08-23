@@ -16,8 +16,6 @@ spec:
         - name: ollama
           image: ollama/ollama:latest
           resources:
-            limits:
-              nvidia.com/gpu: 1
           ports:
             - containerPort: 11434
           volumeMounts:
