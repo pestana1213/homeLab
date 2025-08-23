@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: email-classifier
-          image: docker.io/joaopestana123/email-classifier:latest
+          image: docker.io/joaopestana123/email-classifier:latest-v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
