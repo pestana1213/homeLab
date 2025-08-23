@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-classifier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-classifier
+  template:
+    metadata:
+      labels:
+        app: email-classifier
+    spec:
+      containers:
+        - name: email-classifier
+          image: docker.io/joaopestana123/email-classifier:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
