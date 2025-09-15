@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qbittorrent
+  namespace: playground
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qbittorrent
+  template:
+    metadata:
+      labels:
+        app: qbittorrent
+    spec:
+      containers:
+      - name: qbittorrent
+        image: linuxserver/qbittorrent:latest
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: /config
+          name: qbittorrent-config
+        - mountPath: /downloads
+          name: downloads
+        env:
+        - name: PUID
+          value: "1000"
+        - name: PGID
+          value: "1000"
+        - name: WEBUI_LISTEN
+          value: "0.0.0.0"  # makes NodePort accessible
+      volumes:
+      - name: qbittorrent-config
+        persistentVolumeClaim:
+          claimName: qbittorrent-config
+      - name: downloads
+        persistentVolumeClaim:
+          claimName: downloads-pvc

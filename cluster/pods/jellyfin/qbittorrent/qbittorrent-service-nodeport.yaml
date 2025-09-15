@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: qbittorrent-vpn
+  name: qbittorrent
   namespace: playground
 spec:
   selector:
-    app: qbittorrent-vpn
-  ports:
-  - name: webui
-    port: 8080
-    targetPort: 8080
+    app: qbittorrent
   type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 32080
