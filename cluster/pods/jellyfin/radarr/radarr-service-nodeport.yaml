@@ -10,5 +10,5 @@ spec:
   - protocol: TCP
     port: 7878
     targetPort: 7878
-    nodePort: 32766   # external port on node
+    nodePort: 32063   # external port on node
   type: NodePort

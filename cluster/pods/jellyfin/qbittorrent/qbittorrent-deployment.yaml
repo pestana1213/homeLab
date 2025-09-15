@@ -31,9 +31,9 @@ spec:
         - name: WEBUI_LISTEN
           value: "0.0.0.0"
         - name: WEBUI_USERNAME
-          value: "admin"           # optional: set your username
+          value: ""           # disables login
         - name: WEBUI_PASSWORD
-          value: "yourpassword"    # optional: set your password
+          value: ""           # disables login
       volumes:
       - name: qbittorrent-config
         persistentVolumeClaim:
