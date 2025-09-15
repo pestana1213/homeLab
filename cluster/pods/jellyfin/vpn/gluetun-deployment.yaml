@@ -23,11 +23,7 @@ spec:
         - name: VPN_SERVICE_PROVIDER
           value: "mullvad"   # or protonvpn, pia, nordvpn, etc.
         - name: VPN_TYPE
-          value: "wireguard" # or openvpn
-        - name: VPN_ENDPOINT_IP
-          value: "xx.xx.xx.xx"
-        - name: VPN_ENDPOINT_PORT
-          value: "51820"
+          value: "openvpn" # or openvpn
         - name: VPN_INTERFACE
           value: "wg0"
         volumeMounts:
